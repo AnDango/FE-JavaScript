@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>定时器</title>
+    <title>定时器setInterval()</title>
     <script type="text/javascript">
         var timeDisplay;
         function clock(){
@@ -10,12 +10,13 @@
             var timeDisplay = time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
             document.getElementById("clock").value = timeDisplay;
         }
-        setInterval(clock , 1000);
+        var timer = setInterval(clock , 1000);
     </script>
 </head>
 <body>
 <form>
     <input type="text" id="clock" size="50" />
+    <input type="button" value="停止计时器" onclick="clearInterval(timer)" />
 </form>
 </body>
 </html>
