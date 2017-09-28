@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>计时器setTimeout()</title>
+    <script type="text/javascript">
+        var num = 0;
+        var timer;
+        function startCount(){
+            document.getElementById('count').value = num;
+            num++;
+            timer = setTimeout("startCount()",1000);
+        }
+        function stopCount(){
+            clearTimeout(timer);
+        }
+    </script>
+</head>
+<body>
+<form>
+    <input type="text" id="count" />
+    <input type="button" value="Start" onClick="startCount()" />
+    <input type="button" value="Stop" onClick="stopCount()"  />
+</form>
+</body>
+</html>
